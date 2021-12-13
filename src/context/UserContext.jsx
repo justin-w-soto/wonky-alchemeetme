@@ -5,10 +5,10 @@ const UserContext = createContext()
 
 // step 2 create a user provider that takes in children
 const UserProvider = ({ children }) => {
-  const [name, setName] = useState('')
+  const [user, setUser] = useState('')
 
   // step 3 use the .Provider method on our UserContext function and pass children props into the component
-  return <UserContext.Provider value={{ name, setName }}> {children} </UserContext.Provider> 
+  return <UserContext.Provider value={{ user, setUser }}> {children} </UserContext.Provider> 
 }
 
 // steps 4 & 5 create custom hook and pass it the useContext hook and the UserContext function
@@ -17,7 +17,7 @@ const UserProvider = ({ children }) => {
    const context = useContext(UserContext)
 
    if (context === undefined) {
-     throw new Error('Error, You have made a mistake.')
+     throw new Error('Error!!!!! Citizen, you are guilty of a mind crime, the thought police are en route. Please remain calm and stay seated.')
    }
 //    step 6 return ctx
    return context
