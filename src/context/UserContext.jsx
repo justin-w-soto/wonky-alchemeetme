@@ -5,7 +5,9 @@ const UserContext = createContext()
 
 // step 2 create a user provider that takes in children
 const UserProvider = ({ children }) => {
-  const [user, setUser] = useState('')
+  const [user, setUser] = useState({});
+  
+
 
   // step 3 use the .Provider method on our UserContext function and pass children props into the component
   return <UserContext.Provider value={{ user, setUser }}> {children} </UserContext.Provider> 
