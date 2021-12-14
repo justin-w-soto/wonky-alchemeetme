@@ -3,8 +3,8 @@ import Profile from '../../components/Profile/Profile'
 import { useCustomHook } from '../../context/UserContext'
 
 const Home = () => {
-  const [loading, setLoading] = useState(true)
   const { user } = useCustomHook()
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if (user.name) {
@@ -15,7 +15,7 @@ const Home = () => {
   }, [user])
 
   if (loading) return <h1>Loading...</h1>
- return  <Profile />
+ return  <Profile user={user}/>
 }
 
 export default Home
