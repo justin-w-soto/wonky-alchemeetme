@@ -1,7 +1,9 @@
 import logo from '../../assets/meet.png'
 import './Header.css'
+import { useCustomHook } from '../../context/UserContext'
 
-const Header = ({ user }) => {
+const Header = () => {
+  const user = useCustomHook();
   const { name, color } = user
   return (
     <header>
